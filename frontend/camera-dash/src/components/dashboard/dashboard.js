@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import CampusView from "../cards/campusview";
 import FloorMap from "../cards/floormap";
 import CameraSystem from "../cards/camerasys";

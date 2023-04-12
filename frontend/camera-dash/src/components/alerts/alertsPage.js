@@ -30,8 +30,16 @@ function AlertsPage() {
         return <span className={`badge bg-${badgeVariant}`}>{severity}</span>;
     };
 
+    // To clear all Notifications (alerts)
     const clearNotifications = (notifications) => {
         setAlerts([]);
+    };
+
+    // To remove a notification at the specified index. Triggered when you click "Clear" button next to specified notification.
+    const clearNotification = (index, alerts) => {
+        const updatedAlerts = [...alerts];
+        updatedAlerts.splice(index, 1);
+        setAlerts(updatedAlerts);
     };
 
     return (
@@ -53,7 +61,7 @@ function AlertsPage() {
                                 <td>{alert.time}</td>
                                 <td>{alert.message}</td>
                                 <td>
-                                    <Button class="btn btn-dark">Clear</Button>
+                                    <Button className="btn btn-secondary" onClick={() => clearNotification(index, alerts)}>Clear</Button>
                                 </td>
                             </tr>
                         ))}
@@ -63,7 +71,7 @@ function AlertsPage() {
                 <p>No Alerts or notifications</p>
             )}
             <Button
-                class="btn btn-primary"
+                className="btn btn-dark"
                 onClick={clearNotifications}
                 disabled={alerts.length === 0}
             >

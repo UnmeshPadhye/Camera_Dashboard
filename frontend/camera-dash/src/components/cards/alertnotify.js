@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Table, Button } from "react-bootstrap";
+import { Card, Table, Button, NavLink } from "react-bootstrap";
 import { Navigate, useNavigate, Link } from "react-router-dom"
 
 function AlertsAndNotifications() {
@@ -37,7 +37,7 @@ function AlertsAndNotifications() {
   };
 
   const showAlerts = (alerts) => {
-    <Link to="/alerts"></Link>
+    <NavLink to="/alerts"></NavLink>
   }
 
   return (
