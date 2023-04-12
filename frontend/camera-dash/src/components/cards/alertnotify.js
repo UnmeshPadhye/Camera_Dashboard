@@ -36,9 +36,6 @@ function AlertsAndNotifications() {
     return <span className={`badge bg-${badgeVariant}`}>{severity}</span>;
   };
 
-  const showAlerts = (alerts) => {
-    <NavLink to="/alerts"></NavLink>
-  }
 
   return (
     <Card>

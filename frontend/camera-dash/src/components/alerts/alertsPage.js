@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 function AlertsPage() {
@@ -51,6 +52,7 @@ function AlertsPage() {
                             <th>Severity</th>
                             <th>Time</th>
                             <th>Message</th>
+                            <th>Recording</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -60,6 +62,10 @@ function AlertsPage() {
                                 <td>{alertBadge(alert.severity)}</td>
                                 <td>{alert.time}</td>
                                 <td>{alert.message}</td>
+                                <td>
+                                    {/* TO DO: Link component update to dynamic camera ID link */}
+                                    <Link to="/recording">View Feed</Link>
+                                </td>
                                 <td>
                                     <Button className="btn btn-secondary" onClick={() => clearNotification(index, alerts)}>Clear</Button>
                                 </td>
