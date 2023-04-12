@@ -22,8 +22,10 @@ function Header() {
           <Nav.Item>
             <NavLink className="nav-link" to="/data-recording" activeclassname="active">Recording</NavLink>
           </Nav.Item>
+          <Nav.Item>
+            <NavLink className="nav-link" to="/alerts" activeclassname="active">Alerts</NavLink>
+          </Nav.Item>
 
-          
         </Nav>
       </Navbar.Collapse>
     </Navbar>

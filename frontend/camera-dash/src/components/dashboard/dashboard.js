@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import CampusView from "../cards/campusview";
 import FloorMap from "../cards/floormap";
 import CameraSystem from "../cards/camerasys";
@@ -19,19 +19,19 @@ function Dashboard() {
           <FloorMap />
         </Col>
         <Col md={4} className="card-col">
-        <CameraSystem />
+          <CameraSystem />
         </Col>
-        
+
       </Row>
       <Row>
         <Col md={4} className="card-col">
-          <ScheduleCamera/>
+          <ScheduleCamera />
         </Col>
         <Col md={4} className="card-col">
-        <AlertsAndNotifications/>
+          <AlertsAndNotifications />
         </Col>
         <Col md={4} className="card-col">
-          <DataStatistics/>
+          <DataStatistics />
         </Col>
       </Row>
     </div>
