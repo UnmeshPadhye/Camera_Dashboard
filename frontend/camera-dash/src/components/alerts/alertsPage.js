@@ -12,9 +12,6 @@ function AlertsPage() {
         { severity: "Medium", time: "2023-04-08 08:10:20", message: "Camera 4: Firmware update available" },
     ]);
 
-    const [hasAlerts, setHasAlerts] = useState(true);
-
-
     const alertBadge = (severity) => {
         let badgeVariant = "";
         switch (severity) {
