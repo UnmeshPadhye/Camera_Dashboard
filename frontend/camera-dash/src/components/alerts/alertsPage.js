@@ -12,6 +12,9 @@ function AlertsPage() {
         { severity: "Medium", time: "2023-04-08 08:10:20", message: "Camera 4: Firmware update available" },
     ]);
 
+    const [hasAlerts, setHasAlerts] = useState(true);
+
+
     const alertBadge = (severity) => {
         let badgeVariant = "";
         switch (severity) {
@@ -36,30 +39,39 @@ function AlertsPage() {
 
     return (
         <div className="container">
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>Severity</th>
-                        <th>Time</th>
-                        <th>Message</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {alerts.map((alert, index) => (
-                        <tr key={index}>
-                            <td>{alertBadge(alert.severity)}</td>
-                            <td>{alert.time}</td>
-                            <td>{alert.message}</td>
-                            <td>
-                                <Button class="btn btn-dark">Clear</Button>
-                            </td>
+            {alerts.length > 0 ? (
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>Severity</th>
+                            <th>Time</th>
+                            <th>Message</th>
+                            <th></th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
-
-            <Button className="btn btn-primary" onClick={() => clearNotifications(alerts)}>Clear all notifications</Button>
+                    </thead>
+                    <tbody>
+                        {alerts.map((alert, index) => (
+                            <tr key={index}>
+                                <td>{alertBadge(alert.severity)}</td>
+                                <td>{alert.time}</td>
+                                <td>{alert.message}</td>
+                                <td>
+                                    <Button class="btn btn-dark">Clear</Button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            ) : (
+                <p>No Alerts or notifications</p>
+            )}
+            <Button
+                class="btn btn-primary"
+                onClick={clearNotifications}
+                disabled={alerts.length === 0}
+            >
+                Clear all Alerts
+            </Button>
         </div>
     );
 }
