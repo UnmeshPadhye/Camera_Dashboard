@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card, Table, Button } from "react-bootstrap";
+import { Navigate, useNavigate, Link } from "react-router-dom"
 
 function AlertsAndNotifications() {
   //const [alerts, setAlerts] = useState([]);
@@ -15,8 +16,6 @@ function AlertsAndNotifications() {
     { severity: "High", time: "2023-04-11 12:45:30", message: "Camera 1: Motion detected" },
     { severity: "Medium", time: "2023-04-11 11:20:10", message: "Camera 3: Connection lost" },
     { severity: "Low", time: "2023-04-10 19:15:00", message: "Camera 2: Low battery" },
-    { severity: "High", time: "2023-04-09 14:30:40", message: "Camera 5: Intrusion detected" },
-    { severity: "Medium", time: "2023-04-08 08:10:20", message: "Camera 4: Firmware update available" },
   ]);
 
   const alertBadge = (severity) => {
@@ -36,6 +35,10 @@ function AlertsAndNotifications() {
     }
     return <span className={`badge bg-${badgeVariant}`}>{severity}</span>;
   };
+
+  const showAlerts = (alerts) => {
+    <Link to="/alerts"></Link>
+  }
 
   return (
     <Card>
@@ -59,12 +62,12 @@ function AlertsAndNotifications() {
             ))}
           </tbody>
         </Table>
-        <Button variant="primary" href="/alerts">
-          Alerts
-        </Button>
+
+        <Link to="/alerts" className="btn btn-primary">Alerts</Link>
+
         <Card.Text>SJSU Camera System</Card.Text>
       </Card.Body>
-    </Card>
+    </Card >
   );
 }
 

@@ -19,19 +19,19 @@ function Dashboard() {
           <FloorMap />
         </Col>
         <Col md={4} className="card-col">
-        <CameraSystem />
+          <CameraSystem />
         </Col>
-        
+
       </Row>
       <Row>
         <Col md={4} className="card-col">
-          <ScheduleCamera/>
+          <ScheduleCamera />
         </Col>
         <Col md={4} className="card-col">
-        <AlertsAndNotifications/>
+          <AlertsAndNotifications />
         </Col>
         <Col md={4} className="card-col">
-          <DataStatistics/>
+          <DataStatistics />
         </Col>
       </Row>
     </div>
