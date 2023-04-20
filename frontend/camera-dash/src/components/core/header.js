@@ -25,6 +25,9 @@ function Header() {
           <Nav.Item>
             <NavLink className="nav-link" to="/alerts" activeclassname="active">Alerts</NavLink>
           </Nav.Item>
+          <Nav.Item>
+            <NavLink className="nav-link" to="/live" activeclassname="active">Live Feed</NavLink>
+          </Nav.Item>
 
         </Nav>
       </Navbar.Collapse>

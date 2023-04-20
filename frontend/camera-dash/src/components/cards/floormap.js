@@ -15,7 +15,7 @@ function FloorMap() {
   return (
     <Card>
       <Card.Header>Floor Map</Card.Header>
-      {image && <Card.Img variant="top" src={image} alt="Campus View" style={{ height: "262px" }}/>}
+      {image && <Card.Img variant="top" src={image} alt="Campus View" style={{ height: "262px" }} />}
       <Card.Body>
         <Button variant="primary" href="/campus">
           Floor Map
