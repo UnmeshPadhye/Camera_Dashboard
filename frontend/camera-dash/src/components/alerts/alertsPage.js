@@ -11,6 +11,10 @@ function AlertsPage() {
         { severity: "Low", time: "2023-04-10 19:15:00", message: "Camera 2: Low battery" },
         { severity: "High", time: "2023-04-09 14:30:40", message: "Camera 5: Intrusion detected" },
         { severity: "Medium", time: "2023-04-08 08:10:20", message: "Camera 4: Firmware update available" },
+        { severity: "Low", time: "2023-04-10 19:15:00", message: "Camera 2: Low battery" },
+        { severity: "Low", time: "2023-04-09 14:30:40", message: "Camera 5: Intrusion detected" },
+        { severity: "High", time: "2023-04-08 08:10:20", message: "Camera 4: Firmware update available" },
+        { severity: "Medium", time: "2023-04-08 08:10:20", message: "Camera 4: Firmware update available" },
     ]);
 
     const alertBadge = (severity) => {
@@ -64,7 +68,7 @@ function AlertsPage() {
                                 <td>{alert.message}</td>
                                 <td>
                                     {/* TO DO: Link component update to dynamic camera ID link */}
-                                    <Link to="/recording">View Feed</Link>
+                                    <Link to="/data-recording">View Feed</Link>
                                 </td>
                                 <td>
                                     <Button className="btn btn-secondary" onClick={() => clearNotification(index, alerts)}>Clear</Button>
@@ -83,6 +87,14 @@ function AlertsPage() {
             >
                 Clear all Alerts
             </Button>
+            <br />
+            <br />
+            <Link
+                className="btn btn-info"
+                to="/live"
+            >
+                Check Live Feed
+            </Link>
         </div>
     );
 }
