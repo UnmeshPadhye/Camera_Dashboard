@@ -17,7 +17,7 @@ function FloorMap() {
       <Card.Header>Floor Map</Card.Header>
       {image && <Card.Img variant="top" src={image} alt="Campus View" style={{ height: "262px" }}/>}
       <Card.Body>
-        <Button variant="primary" href="/campus">
+        <Button variant="primary" href="/floor">
           Floor Map
         </Button>
         <Card.Text>SJSU Floor Map</Card.Text>
